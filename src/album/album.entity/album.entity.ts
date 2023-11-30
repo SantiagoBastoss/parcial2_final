@@ -1,6 +1,5 @@
-import { Column, Entity, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { TrackEntity } from 'src/track/track.entity/track.entity';
-import { PerformerEntity } from 'src/performer/performer.entity/performer.entity';
+import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
+import { Column, Entity, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
 
 @Entity()
 export class AlbumEntity {
@@ -19,9 +18,7 @@ export class AlbumEntity {
     @Column()
     descripcion: string;
 
-    @OneToMany(() => TrackEntity, track => track.album)
-    tracks: TrackEntity[];
 
-    @ManyToOne(() => PerformerEntity, performers => performers.albums)
-    albums: PerformerEntity;
+    @OneToMany(() => FotoEntity, foto => foto.usuario)
+    fotos: FotoEntity[];
 }
