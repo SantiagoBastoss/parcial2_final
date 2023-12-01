@@ -1,11 +1,11 @@
 import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
 import { RedsocialEntity } from 'src/redsocial/redsocial.entity/redsocial.entity';
-import { Column, Entity, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class UsuarioEntity {
     @PrimaryGeneratedColumn()
-    id: string;
+    id: number;
 
     @Column()
     nombre: string;

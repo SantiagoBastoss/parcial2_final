@@ -1,11 +1,12 @@
 import { AlbumEntity } from 'src/album/album.entity/album.entity';
 import { UsuarioEntity } from 'src/usuario/usuario.entity/usuario.entity';
-import { Column, Entity, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class FotoEntity {
+    
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    id: number;
 
     @Column()
     iso: number;
@@ -17,7 +18,7 @@ export class FotoEntity {
     apertura: number;
 
     @Column()
-    fecha: string;
+    fecha: Date;
 
 
     @ManyToOne(() => UsuarioEntity, usuario => usuario.fotos)

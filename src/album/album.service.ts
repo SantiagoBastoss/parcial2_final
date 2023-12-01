@@ -12,17 +12,23 @@ export class AlbumService {
     ){}
 
     async createAlbum(album: AlbumEntity): Promise<AlbumEntity> {
-        return await this.albumRepository.save(album);
+        if (album.titulo != "")
+            return await this.albumRepository.save(album);
+        else    
+            console.log("El álbum debe tener un título asociado");
     }
 
-    async findAlbumById(id: string): Promise<AlbumEntity> {
+    async findAlbumById(id: number): Promise<AlbumEntity> {
         const album: AlbumEntity = await this.albumRepository.findOne({where: {id}, relations: ["fotos"] } );
         return album;
     }
 
-    async deleteAlbumId(id: string) {
+    async deleteAlbumId(id: number) {
         const album: AlbumEntity = await this.albumRepository.findOne({where:{id}});
-        await this.albumRepository.remove(album);
+        if (album.fotos.length == 0)
+            await this.albumRepository.remove(album);
+        else    
+            console.log("No se puede eliminar el álbum porque tiene una foto asociada");
     }
 }
 

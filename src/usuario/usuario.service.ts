@@ -12,10 +12,11 @@ export class UsuarioService {
     ){}
 
     async createUsuario(usuario: UsuarioEntity): Promise<UsuarioEntity> {
-        return await this.usuarioRepository.save(usuario);
+        if (usuario.telefono.length == 10)
+            return await this.usuarioRepository.save(usuario);
     }
 
-    async findUsuarioById(id: string): Promise<UsuarioEntity> {
+    async findUsuarioById(id: number): Promise<UsuarioEntity> {
         const usuario: UsuarioEntity = await this.usuarioRepository.findOne({where: {id}, relations: ["fotos", "redsocial"] } );
         return usuario;
     }

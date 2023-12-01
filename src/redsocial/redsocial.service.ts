@@ -12,6 +12,7 @@ export class RedsocialService {
     ){}
 
     async createLibreria(redsocial: RedsocialEntity): Promise<RedsocialEntity> {
-        return await this.redsocialRepository.save(redsocial);
+        if (redsocial.slogan.length != 0 && redsocial.slogan.length >= 20)
+            return await this.redsocialRepository.save(redsocial);
     }
 }

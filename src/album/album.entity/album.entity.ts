@@ -1,24 +1,22 @@
 import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
-import { Column, Entity, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class AlbumEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+
+    @PrimaryGeneratedColumn()
+    id: number;
 
     @Column()
-    nombre: string;
+    titulo: string;
 
     @Column()
-    caratula: string;
+    fechaInicio: Date;
 
     @Column()
-    fecha_lanzamiento: string;
-
-    @Column()
-    descripcion: string;
+    fechaFin: Date;
 
 
-    @OneToMany(() => FotoEntity, foto => foto.usuario)
+    @OneToMany(() => FotoEntity, foto => foto.album)
     fotos: FotoEntity[];
 }

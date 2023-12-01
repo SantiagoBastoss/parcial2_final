@@ -15,12 +15,13 @@ export class AlbumFotoService {
     ) {}
 
 
-    async addPhotoToAlbum(albumId: string, fotoId: string): Promise<AlbumEntity> {
-        const foto: FotoEntity = await this.fotoRepository.findOne({where: {id: fotoId}});
+    async addPhotoToAlbum(albumId: number, fotoId: number): Promise<AlbumEntity> {
 
+        const foto: FotoEntity = await this.fotoRepository.findOne({where: {id: fotoId}});
         const album: AlbumEntity = await this.albumRepository.findOne({where: {id: albumId}, relations: ["fotos"]})
         
-        album.fotos = [...album.fotos, foto];
-        return await this.albumRepository.save(album);
-      }
+        if (foto.fecha >= album.fechaInicio && foto.fecha <= album.fechaFin)
+            album.fotos = [...album.fotos, foto];
+            return await this.albumRepository.save(album);
+    }
 }
