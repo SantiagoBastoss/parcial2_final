@@ -29,12 +29,13 @@ describe('FotoService', () => {
     fotosList = [];
     for(let i = 0; i < 5; i++){
         const foto: FotoEntity = await repository.save({
-        iso: faker.number(), 
-        velObturacion: faker.number(), 
-        apertura: faker.number(), 
-        fecha: faker.lorem.date(), 
-        usuario: faker.number(),
-        album: faker.number()})
+          id: "", 
+          iso: faker.number.int(), 
+          velObturacion: faker.number.int(), 
+          apertura: faker.number.int(), 
+          fecha: faker.date.anytime(), 
+          usuario: faker.number.int(),
+          album: faker.number.int()})
         fotosList.push(foto);
     }
   }
@@ -47,10 +48,10 @@ describe('FotoService', () => {
   it('create should return a new foto', async () => {
     const foto: FotoEntity = {
       id: 0,
-      iso: faker.number(),
-      velObturacion: faker.number(),
-      apertura: faker.number(),
-      fecha: faker.lorem.date(),
+      iso: faker.number.int(),
+      velObturacion: faker.number.int(),
+      apertura: faker.number.int(),
+      fecha: faker.date.anytime(),      
       usuario: new UsuarioEntity(),
       album: new AlbumEntity(),
     }
