@@ -29,7 +29,7 @@ describe('FotoService', () => {
     fotosList = [];
     for(let i = 0; i < 5; i++){
         const foto: FotoEntity = await repository.save({
-          id: "", 
+          id: faker.number.int(), 
           iso: faker.number.int(), 
           velObturacion: faker.number.int(), 
           apertura: faker.number.int(), 

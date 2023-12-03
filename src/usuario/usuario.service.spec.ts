@@ -29,7 +29,7 @@ describe('UsuarioService', () => {
     usuariosList = [];
     for(let i = 0; i < 5; i++){
         const usuario: UsuarioEntity = await repository.save({
-        id: faker.number.bigInt(), 
+        id: faker.number.int(), 
         nombre: faker.person.firstName(), 
         telefono: faker.lorem.sentence(),
         redsocial: new RedsocialEntity(),

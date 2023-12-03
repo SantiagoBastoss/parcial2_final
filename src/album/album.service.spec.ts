@@ -27,7 +27,7 @@ describe('AlbumService', () => {
     albumsList = [];
     for(let i = 0; i < 5; i++){
         const album: AlbumEntity = await repository.save({
-        id: faker.number.bigInt(), 
+        id: faker.number.int(), 
         titulo: faker.lorem.sentence(), 
         fechaInicio: faker.date.past(), 
         fechaFin: faker.date.future()})

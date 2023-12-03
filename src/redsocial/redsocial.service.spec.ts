@@ -28,7 +28,7 @@ describe('RedsocialService', () => {
     redesList = [];
     for(let i = 0; i < 5; i++){
         const redsocial: RedsocialEntity = await repository.save({
-        id: faker.number.bigInt(), 
+        id: faker.number.int(), 
         nombre: faker.lorem.sentence(), 
         slogan: faker.lorem.sentence(), 
         usuarios: []})

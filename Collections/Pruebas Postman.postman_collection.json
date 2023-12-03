@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "c07b9d4b-2c51-45e7-90b5-670920703f8a",
+		"name": "Pruebas Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23454746",
+		"_collection_link": "https://cloudy-station-471440.postman.co/workspace/WEB~9341f408-593b-4bcb-96f3-c3b3097c50e6/collection/23454746-c07b9d4b-2c51-45e7-90b5-670920703f8a?action=share&source=collection_link&creator=23454746"
+	},
+	"item": [
+		{
+			"name": "Foto",
+			"item": [
+				{
+					"name": "Create Foto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 0,\r\n   \"iso\": 2234,\r\n   \"velObturacion\": 46,\r\n   \"apertura\": 60,\r\n   \"fecha\": \"20/12/23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Fotos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/fotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Foto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/fotos/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Foto By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/fotos/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album",
+			"item": [
+				{
+					"name": "Create Album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 0,\r\n   \"titulo\": \"Album del solsticio\",\r\n   \"fechaInicio\": \"02/03/23\",\r\n   \"fechaFin\": \"20/07/23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Album By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Album",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album-Foto",
+			"item": [
+				{
+					"name": "Add Foto To Album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/albums/{{album_id}}/fotos/{{foto_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"fotos",
+								"{{foto_id_1}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Red Social",
+			"item": [
+				{
+					"name": "Create Libreria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 0,\r\n   \"nombre\": \"Socializanding\",\r\n   \"slogan\": \"Siempre sociales, nunca anti sociales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/redessociales",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"redessociales"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Create Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 0,\r\n   \"nombre\": \"Raul Castro\",\r\n   \"telefono\": \"02/03/23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Usuario By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
